@@ -30,5 +30,3 @@ DerivedData/
 /fastlane/Preview.html
 AuthKey.p8
 /.pem
-
-/KonamiQR/Constants.swift

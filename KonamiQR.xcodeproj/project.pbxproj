@@ -11,7 +11,6 @@
 		85C1885127DB18610082538A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1885027DB18610082538A /* ContentView.swift */; };
 		85C1885327DB18620082538A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C1885227DB18620082538A /* Assets.xcassets */; };
 		85C1885627DB18620082538A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C1885527DB18620082538A /* Preview Assets.xcassets */; };
-		85C1886227DB1A760082538A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886127DB1A760082538A /* Constants.swift */; };
 		85C1886427DB1C100082538A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886327DB1C100082538A /* WebView.swift */; };
 		85C1886627DB24390082538A /* KonamiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886527DB24390082538A /* KonamiURL.swift */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		85C1885027DB18610082538A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85C1885227DB18620082538A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85C1885527DB18620082538A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		85C1886127DB1A760082538A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85C1886327DB1C100082538A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		85C1886527DB24390082538A /* KonamiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonamiURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +59,6 @@
 				85C1885027DB18610082538A /* ContentView.swift */,
 				85C1885227DB18620082538A /* Assets.xcassets */,
 				85C1885427DB18620082538A /* Preview Content */,
-				85C1886127DB1A760082538A /* Constants.swift */,
 				85C1886327DB1C100082538A /* WebView.swift */,
 				85C1886527DB24390082538A /* KonamiURL.swift */,
 			);
@@ -154,7 +151,6 @@
 				85C1886427DB1C100082538A /* WebView.swift in Sources */,
 				85C1886627DB24390082538A /* KonamiURL.swift in Sources */,
 				85C1884F27DB18610082538A /* KonamiQRApp.swift in Sources */,
-				85C1886227DB1A760082538A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,21 +12,29 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
 
-    var url: URL
+    var url: KonamiURL
+    var username: String
+    var password: String
     let webViewDelegate = WebViewDelegate()
+    var webView: WKWebView? = nil
 
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: url.url)
         webView.load(request)
+        webViewDelegate.username = username
+        webViewDelegate.password = password
         webView.navigationDelegate = webViewDelegate
     }
 }
 
 class WebViewDelegate: NSObject {
+    var username = ""
+    var password = ""
+
     func login(webView: WKWebView) {
         webView.evaluateJavaScript("document.getElementById('username').value = '\(username)'; document.getElementById('password').value = '\(password)'; document.getElementById('formLogin').submit()")
     }
