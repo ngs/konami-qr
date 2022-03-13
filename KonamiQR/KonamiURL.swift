@@ -12,11 +12,10 @@ let baseURL =  URL(string: "https://member.konamisportsclub.jp/")!
 enum KonamiURL: String {
     case login = "login.php"
     case qrcode = "digital_memberscard_barcode.php"
-    case myPage = "my_page.php"
     case error = "sp_error.php"
 
     init?(url: URL?) {
-        guard let url = url else { return nil }
+        guard let url = url, url.absoluteString.hasPrefix(baseURL.absoluteString) else { return nil }
         self.init(rawValue: url.lastPathComponent)
     }
 

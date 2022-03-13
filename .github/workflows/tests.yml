@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - '!develop*'
+
+env:
+  DERIVED_DATA_PATH: DerivedData
+  SCAN_CLONED_SOURCE_PACKAGES_PATH: DerivedData/SourcePackages
+  FASTLANE_SKIP_UPDATE_CHECK: 1
+
+jobs:
+  tests:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+        ruby-version: 3.1
+    - run: bundle exec fastlane tests

@@ -14,7 +14,18 @@
 		85C1886427DB1C100082538A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886327DB1C100082538A /* WebView.swift */; };
 		85C1886627DB24390082538A /* KonamiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886527DB24390082538A /* KonamiURL.swift */; };
 		85F7B4F227DCCF48004319FC /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B4F127DCCF48004319FC /* LoginForm.swift */; };
+		85F7B4FC27DEA808004319FC /* KonamiQRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B4FB27DEA808004319FC /* KonamiQRTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85F7B4FD27DEA808004319FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85C1884327DB18610082538A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85C1884A27DB18610082538A;
+			remoteInfo = KonamiQR;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		85C1884B27DB18610082538A /* KonamiQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KonamiQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +37,19 @@
 		85C1886527DB24390082538A /* KonamiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonamiURL.swift; sourceTree = "<group>"; };
 		85F7B4F127DCCF48004319FC /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		85F7B4F427DEA775004319FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		85F7B4F927DEA808004319FC /* KonamiQRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KonamiQRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F7B4FB27DEA808004319FC /* KonamiQRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonamiQRTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		85C1884827DB18610082538A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F7B4F627DEA808004319FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				85C1884D27DB18610082538A /* KonamiQR */,
+				85F7B4FA27DEA808004319FC /* KonamiQRTests */,
 				85C1884C27DB18610082538A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				85C1884B27DB18610082538A /* KonamiQR.app */,
+				85F7B4F927DEA808004319FC /* KonamiQRTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +100,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		85F7B4FA27DEA808004319FC /* KonamiQRTests */ = {
+			isa = PBXGroup;
+			children = (
+				85F7B4FB27DEA808004319FC /* KonamiQRTests.swift */,
+			);
+			path = KonamiQRTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,6 +131,24 @@
 			productReference = 85C1884B27DB18610082538A /* KonamiQR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		85F7B4F827DEA808004319FC /* KonamiQRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85F7B4FF27DEA808004319FC /* Build configuration list for PBXNativeTarget "KonamiQRTests" */;
+			buildPhases = (
+				85F7B4F527DEA808004319FC /* Sources */,
+				85F7B4F627DEA808004319FC /* Frameworks */,
+				85F7B4F727DEA808004319FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85F7B4FE27DEA808004319FC /* PBXTargetDependency */,
+			);
+			name = KonamiQRTests;
+			productName = KonamiQRTests;
+			productReference = 85F7B4F927DEA808004319FC /* KonamiQRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -113,6 +161,10 @@
 				TargetAttributes = {
 					85C1884A27DB18610082538A = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					85F7B4F827DEA808004319FC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 85C1884A27DB18610082538A;
 					};
 				};
 			};
@@ -132,6 +184,7 @@
 			projectRoot = "";
 			targets = (
 				85C1884A27DB18610082538A /* KonamiQR */,
+				85F7B4F827DEA808004319FC /* KonamiQRTests */,
 			);
 		};
 /* End PBXProject section */
@@ -143,6 +196,13 @@
 			files = (
 				85C1885627DB18620082538A /* Preview Assets.xcassets in Resources */,
 				85C1885327DB18620082538A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85F7B4F727DEA808004319FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +242,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85F7B4F527DEA808004319FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85F7B4FC27DEA808004319FC /* KonamiQRTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85F7B4FE27DEA808004319FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85C1884A27DB18610082538A /* KonamiQR */;
+			targetProxy = 85F7B4FD27DEA808004319FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		85C1885727DB18620082538A /* Debug */ = {
@@ -367,6 +443,42 @@
 			};
 			name = Release;
 		};
+		85F7B50027DEA808004319FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3Y8APYUG2G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.ngs.sandbox.KonamiQRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KonamiQR.app/KonamiQR";
+			};
+			name = Debug;
+		};
+		85F7B50127DEA808004319FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3Y8APYUG2G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.ngs.sandbox.KonamiQRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KonamiQR.app/KonamiQR";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -384,6 +496,15 @@
 			buildConfigurations = (
 				85C1885A27DB18620082538A /* Debug */,
 				85C1885B27DB18620082538A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F7B4FF27DEA808004319FC /* Build configuration list for PBXNativeTarget "KonamiQRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F7B50027DEA808004319FC /* Debug */,
+				85F7B50127DEA808004319FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
