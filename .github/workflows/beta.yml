@@ -1,0 +1,44 @@
+name: Beta
+
+on:
+  push:
+    branches: master
+
+env:
+  APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+  APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+  APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64: 'true'
+  APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
+  DERIVED_DATA_PATH: DerivedData
+  GYM_CLONED_SOURCE_PACKAGES_PATH: DerivedData/SourcePackages
+  MATCH_READONLY: 'true'
+  MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+  MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+  MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+  MATCH_KEYCHAIN_NAME: tmp.keychain
+  CERT_KEYCHAIN_NAME: tmp.keychain
+  KEYCHAIN_NAME: tmp.keychain
+  MATCH_KEYCHAIN_PASSWORD: tmp
+  CERT_KEYCHAIN_PASSWORD: tmp
+  KEYCHAIN_PASSWORD: tmp
+  FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+  FASTLANE_SKIP_UPDATE_CHECK: 1
+
+jobs:
+  beta:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+        ruby-version: 3.1
+    - run: bundle exec fastlane ios create_ci_keychain
+    - run: bundle exec fastlane ios release_match
+      name: Release match
+    - run: bundle exec fastlane ios set_build_number
+      name: Set build number
+    - run: bundle exec fastlane ios release_build
+      name: Release build
+    - run: bundle exec fastlane ios testflight_upload
+      name: Upload app to Apple TestFlight

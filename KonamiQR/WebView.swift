@@ -17,7 +17,7 @@ struct WebView: UIViewRepresentable {
     var password: String
     var autoNavigate: Bool
     let webViewDelegate = WebViewDelegate()
-    var webView: WKWebView? = nil
+    var webView: WKWebView?
 
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
@@ -39,7 +39,11 @@ class WebViewDelegate: NSObject {
     var autoNavigate = true
 
     func login(webView: WKWebView) {
-        webView.evaluateJavaScript("document.getElementById('username').value = '\(username)'; document.getElementById('password').value = '\(password)'; document.getElementById('formLogin').submit()")
+        webView.evaluateJavaScript("""
+            document.getElementById('username').value = '\(username)';
+            document.getElementById('password').value = '\(password)';
+            document.getElementById('formLogin').submit();
+        """)
     }
 }
 
@@ -49,19 +53,19 @@ extension WebViewDelegate: WKNavigationDelegate {
             return
         }
         guard let url = KonamiURL(url: webView.url) else {
-            webView.load(konami: .qr)
+            webView.load(konami: .qrcode)
             return
         }
 
         switch url {
-        case .qr:
+        case .qrcode:
             return
         case .login:
             login(webView: webView)
         case .error:
             webView.load(konami: .login)
         default:
-            webView.load(konami: .qr)
+            webView.load(konami: .qrcode)
         }
     }
 }

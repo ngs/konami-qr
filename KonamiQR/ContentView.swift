@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var username = UserDefaults.standard.string(forKey: "username")
     @State var password = UserDefaults.standard.string(forKey: "password")
     @State var autoNavigate = UserDefaults.standard.bool(forKey: "autoNavigate")
-    @State var url: KonamiURL = .qr
+    @State var url: KonamiURL = .qrcode
     @Environment(\.scenePhase) var scenePhase
 
     var body: some View {
@@ -29,7 +29,7 @@ struct ContentView: View {
                     autoNavigate: autoNavigate)
                     .onChange(of: scenePhase) { newValue in
                         if newValue == .active && autoNavigate {
-                            url = .qr
+                            url = .qrcode
                         }
                     }
             }.onAppear {

@@ -11,7 +11,7 @@ let baseURL =  URL(string: "https://member.konamisportsclub.jp/")!
 
 enum KonamiURL: String {
     case login = "login.php"
-    case qr = "digital_memberscard_barcode.php"
+    case qrcode = "digital_memberscard_barcode.php"
     case myPage = "my_page.php"
     case error = "sp_error.php"
 

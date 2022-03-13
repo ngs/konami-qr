@@ -1,0 +1,32 @@
+name: Metadata
+
+on:
+  push:
+    branches:
+      - master
+      - metadata
+    paths:
+      - 'fastlane/metadata/**/*.txt'
+      - '.github/workflows/release_metadata.yml'
+      - '.env.*'
+
+env:
+  APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+  APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+  APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64: 'true'
+  APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
+  FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+  FASTLANE_SKIP_UPDATE_CHECK: 1
+  DELIVER_FORCE: 'true'
+
+jobs:
+  release_metadata:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+        ruby-version: 2.7
+    - run: bundle exec fastlane ios metadata
+      name: Upload metadata to App Store Connect

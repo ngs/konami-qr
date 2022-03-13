@@ -1,0 +1,88 @@
+# vim: set ft=ruby
+
+default_platform(:ios)
+
+platform :ios do
+  desc 'Set Build Number to GITHUB_RUN_ID'
+  lane :set_build_number do
+    increment_build_number(
+      build_number: ENV.fetch('GITHUB_RUN_ID')
+    )
+  end
+
+  desc 'Match App Store Provisioning Profiles'
+  lane :release_match do
+    match type: 'appstore'
+  end
+
+  desc 'Create keychain'
+  lane :create_ci_keychain do
+    create_keychain(
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600
+    )
+  end
+
+  desc 'Run tests'
+  lane :tests do
+    xcode_select ENV['XCODE_PATH'] if ENV['XCODE_PATH']
+    run_tests(
+      scheme: ENV['FL_PROJECT_SIGNING_TARGETS']
+    )
+  end
+
+  desc 'Build release'
+  lane :release_build do
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      build_configurations: %w[Release]
+    )
+
+    build_app(
+      export_method: 'app-store',
+      output_directory: './build/release',
+      scheme: ENV['FL_PROJECT_SIGNING_TARGETS']
+    )
+  end
+
+  desc 'Publish app to TestFlight'
+  lane :testflight_upload do
+    app_store_connect_api_key
+    pilot(
+      skip_waiting_for_build_processing: true,
+      ipa: "./build/release/#{ENV['FL_PROJECT_SIGNING_TARGETS']}.ipa"
+    )
+  end
+
+  desc 'Update App Store metadata'
+  lane :metadata do
+    app_store_connect_api_key
+    upload_to_app_store(
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      skip_metadata: false,
+      skip_app_version_update: true,
+      precheck_include_in_app_purchases: false,
+    )
+  end
+
+  desc 'Update App Store screenshots'
+  lane :screenshots do
+    app_store_connect_api_key
+    upload_to_app_store(
+      skip_binary_upload: true,
+      skip_screenshots: false,
+      overwrite_screenshots: true,
+      skip_metadata: true,
+      skip_app_version_update: true,
+      precheck_include_in_app_purchases: false,
+      run_precheck_before_submit: false
+    )
+  end
+
+  desc 'Match all'
+  lane :match_all do
+    %w[appstore development adhoc].each { |t| match type: t }
+  end
+end

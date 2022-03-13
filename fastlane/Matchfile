@@ -1,0 +1,4 @@
+platform "ios"
+storage_mode "git"
+type "development"
+
