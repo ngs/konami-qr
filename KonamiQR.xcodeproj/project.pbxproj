@@ -25,6 +25,7 @@
 		85C1886327DB1C100082538A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		85C1886527DB24390082538A /* KonamiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonamiURL.swift; sourceTree = "<group>"; };
 		85F7B4F127DCCF48004319FC /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		85F7B4F427DEA775004319FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		85C1884D27DB18610082538A /* KonamiQR */ = {
 			isa = PBXGroup;
 			children = (
+				85F7B4F427DEA775004319FC /* Info.plist */,
 				85C1885027DB18610082538A /* ContentView.swift */,
 				85C1884E27DB18610082538A /* KonamiQRApp.swift */,
 				85C1886527DB24390082538A /* KonamiURL.swift */,
@@ -311,6 +313,7 @@
 				DEVELOPMENT_TEAM = 3Y8APYUG2G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KonamiQR/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "KONAMI 会員証";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -343,6 +346,7 @@
 				DEVELOPMENT_TEAM = 3Y8APYUG2G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KonamiQR/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "KONAMI 会員証";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
