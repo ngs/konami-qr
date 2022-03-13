@@ -1,9 +1,6 @@
 name: Tests
 
-on:
-  push:
-    branches:
-      - '!develop*'
+on: push
 
 env:
   DERIVED_DATA_PATH: DerivedData
