@@ -15,6 +15,7 @@ struct WebView: UIViewRepresentable {
     var url: KonamiURL
     var username: String
     var password: String
+    var autoNavigate: Bool
     let webViewDelegate = WebViewDelegate()
     var webView: WKWebView? = nil
 
@@ -25,6 +26,7 @@ struct WebView: UIViewRepresentable {
     func updateUIView(_ webView: WKWebView, context: Context) {
         webViewDelegate.username = username
         webViewDelegate.password = password
+        webViewDelegate.autoNavigate = autoNavigate
         webView.navigationDelegate = webViewDelegate
         let request = URLRequest(url: url.url)
         webView.load(request)
@@ -34,6 +36,7 @@ struct WebView: UIViewRepresentable {
 class WebViewDelegate: NSObject {
     var username = ""
     var password = ""
+    var autoNavigate = true
 
     func login(webView: WKWebView) {
         webView.evaluateJavaScript("document.getElementById('username').value = '\(username)'; document.getElementById('password').value = '\(password)'; document.getElementById('formLogin').submit()")
@@ -42,17 +45,23 @@ class WebViewDelegate: NSObject {
 
 extension WebViewDelegate: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        guard let url = KonamiURL(url: webView.url) else { return }
+        if !autoNavigate {
+            return
+        }
+        guard let url = KonamiURL(url: webView.url) else {
+            webView.load(konami: .qr)
+            return
+        }
 
         switch url {
+        case .qr:
+            return
         case .login:
             login(webView: webView)
         case .error:
             webView.load(konami: .login)
-        case .myPage:
-            webView.load(konami: .qr)
         default:
-            return
+            webView.load(konami: .qr)
         }
     }
 }

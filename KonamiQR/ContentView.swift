@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var username = UserDefaults.standard.string(forKey: "username")
     @State var password = UserDefaults.standard.string(forKey: "password")
+    @State var autoNavigate = UserDefaults.standard.bool(forKey: "autoNavigate")
     @State var url: KonamiURL = .qr
     @Environment(\.scenePhase) var scenePhase
 
@@ -17,16 +18,26 @@ struct ContentView: View {
         if
             let username = username,
             let password = password {
-            WebView(url: url, username: username, password: password)
-                .onChange(of: scenePhase) { newValue in
-                    if newValue == .active {
-                        url = .qr
+            VStack {
+                Toggle("Auto Navigate", isOn: $autoNavigate)
+                    .padding([.top, .bottom], 10)
+                    .padding([.leading, .trailing], 20)
+                WebView(
+                    url: url,
+                    username: username,
+                    password: password,
+                    autoNavigate: autoNavigate)
+                    .onChange(of: scenePhase) { newValue in
+                        if newValue == .active && autoNavigate {
+                            url = .qr
+                        }
                     }
-                }
+            }.onAppear {
+                UserDefaults.standard.register(defaults: ["autoNavigate": true])
+            }
         } else {
             LoginForm(username: $username, password: $password)
         }
-
     }
 }
 
