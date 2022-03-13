@@ -23,11 +23,11 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {
-        let request = URLRequest(url: url.url)
-        webView.load(request)
         webViewDelegate.username = username
         webViewDelegate.password = password
         webView.navigationDelegate = webViewDelegate
+        let request = URLRequest(url: url.url)
+        webView.load(request)
     }
 }
 

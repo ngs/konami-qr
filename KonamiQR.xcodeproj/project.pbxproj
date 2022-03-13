@@ -13,6 +13,7 @@
 		85C1885627DB18620082538A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C1885527DB18620082538A /* Preview Assets.xcassets */; };
 		85C1886427DB1C100082538A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886327DB1C100082538A /* WebView.swift */; };
 		85C1886627DB24390082538A /* KonamiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886527DB24390082538A /* KonamiURL.swift */; };
+		85F7B4F227DCCF48004319FC /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B4F127DCCF48004319FC /* LoginForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		85C1885527DB18620082538A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85C1886327DB1C100082538A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		85C1886527DB24390082538A /* KonamiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonamiURL.swift; sourceTree = "<group>"; };
+		85F7B4F127DCCF48004319FC /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +57,13 @@
 		85C1884D27DB18610082538A /* KonamiQR */ = {
 			isa = PBXGroup;
 			children = (
-				85C1884E27DB18610082538A /* KonamiQRApp.swift */,
 				85C1885027DB18610082538A /* ContentView.swift */,
+				85C1884E27DB18610082538A /* KonamiQRApp.swift */,
+				85C1886527DB24390082538A /* KonamiURL.swift */,
+				85F7B4F127DCCF48004319FC /* LoginForm.swift */,
+				85C1886327DB1C100082538A /* WebView.swift */,
 				85C1885227DB18620082538A /* Assets.xcassets */,
 				85C1885427DB18620082538A /* Preview Content */,
-				85C1886327DB1C100082538A /* WebView.swift */,
-				85C1886527DB24390082538A /* KonamiURL.swift */,
 			);
 			path = KonamiQR;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F7B4F227DCCF48004319FC /* LoginForm.swift in Sources */,
 				85C1885127DB18610082538A /* ContentView.swift in Sources */,
 				85C1886427DB1C100082538A /* WebView.swift in Sources */,
 				85C1886627DB24390082538A /* KonamiURL.swift in Sources */,
