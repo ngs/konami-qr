@@ -64,8 +64,6 @@ extension WebViewDelegate: WKNavigationDelegate {
             login(webView: webView)
         case .error:
             webView.load(konami: .login)
-        default:
-            webView.load(konami: .qrcode)
         }
     }
 }
