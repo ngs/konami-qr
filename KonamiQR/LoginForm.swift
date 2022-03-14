@@ -23,10 +23,6 @@ struct LoginForm: View {
                 .padding(10)
                 .background(Color("TextFieldBackground"))
             Button {
-                let defaults = UserDefaults.standard
-                defaults.set(inputUsername, forKey: "username")
-                defaults.set(inputPassword, forKey: "password")
-                defaults.synchronize()
                 username = inputUsername
                 password = inputPassword
             } label: {

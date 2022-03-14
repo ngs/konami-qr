@@ -15,6 +15,8 @@
 		85C1886627DB24390082538A /* KonamiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C1886527DB24390082538A /* KonamiURL.swift */; };
 		85F7B4F227DCCF48004319FC /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B4F127DCCF48004319FC /* LoginForm.swift */; };
 		85F7B4FC27DEA808004319FC /* KonamiQRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B4FB27DEA808004319FC /* KonamiQRTests.swift */; };
+		85F7B50327DEEE08004319FC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B50227DEEE08004319FC /* ViewModel.swift */; };
+		85F7B50527DEF1C2004319FC /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F7B50427DEF1C2004319FC /* ActionBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		85F7B4F427DEA775004319FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		85F7B4F927DEA808004319FC /* KonamiQRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KonamiQRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F7B4FB27DEA808004319FC /* KonamiQRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KonamiQRTests.swift; sourceTree = "<group>"; };
+		85F7B50227DEEE08004319FC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		85F7B50427DEF1C2004319FC /* ActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +85,12 @@
 			isa = PBXGroup;
 			children = (
 				85F7B4F427DEA775004319FC /* Info.plist */,
+				85F7B50427DEF1C2004319FC /* ActionBar.swift */,
 				85C1885027DB18610082538A /* ContentView.swift */,
 				85C1884E27DB18610082538A /* KonamiQRApp.swift */,
 				85C1886527DB24390082538A /* KonamiURL.swift */,
 				85F7B4F127DCCF48004319FC /* LoginForm.swift */,
+				85F7B50227DEEE08004319FC /* ViewModel.swift */,
 				85C1886327DB1C100082538A /* WebView.swift */,
 				85C1885227DB18620082538A /* Assets.xcassets */,
 				85C1885427DB18620082538A /* Preview Content */,
@@ -238,6 +244,8 @@
 				85C1885127DB18610082538A /* ContentView.swift in Sources */,
 				85C1886427DB1C100082538A /* WebView.swift in Sources */,
 				85C1886627DB24390082538A /* KonamiURL.swift in Sources */,
+				85F7B50527DEF1C2004319FC /* ActionBar.swift in Sources */,
+				85F7B50327DEEE08004319FC /* ViewModel.swift in Sources */,
 				85C1884F27DB18610082538A /* KonamiQRApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
