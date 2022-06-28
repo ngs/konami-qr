@@ -17,20 +17,13 @@ struct WebView: UIViewRepresentable {
     var password: String
     var autoNavigate: Bool
     var webView: WKWebView?
-
-    init(url: KonamiURL, username: String, password: String, autoNavigate: Bool) {
-        self.url = url
-        self.username = username
-        self.password = password
-        self.autoNavigate = autoNavigate
-    }
+    var webViewDelegate = WebViewDelegate() // swiftlint:disable:this all
 
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {
-        let webViewDelegate = webView.navigationDelegate as? WebViewDelegate ?? WebViewDelegate()
         webView.navigationDelegate = webViewDelegate
         webViewDelegate.username = username
         webViewDelegate.password = password
